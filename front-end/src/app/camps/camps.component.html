@@ -1,0 +1,124 @@
+<div class="container">
+  <div class=" py-2 row justify-content-center text-white">
+    <div class="col-lg-6 p-2">
+      <h4 class=" font-weight-bold font-italic text-dark">Requirement for being a donor</h4>
+      <div class="card bg-primary">
+        <div class="card-body">
+          <ul>
+            <li class="card-text">Maintaining your iron level is an important part of being a healthy donor. We encourage you to learn more about iron and donating blood.</li>
+            <li class="card-text">
+              Be at least 17 years old in most states (16 years old with parental consent in some states).
+            </li>
+            <li class="card-text">
+              Weigh at least 110 lbs. Additional height and weight requirements apply for donors 18 years old and younger and all high school student donors.
+            </li>
+            <li class="card-text">
+              Have not donated blood in the last 56 days.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 p-2">
+      <h4 class=" font-weight-bold font-italic text-dark ">Requirement for being a Volunteer</h4>
+      <div class="card bg-danger">
+        <div class="card-body">
+          <ul>
+            <li class="card-text">If you have ever wondered how we manage to organise camp at this scale every now and then, then this opportunity is for you. Volunteer must be enthusiastic and good with crowd management.</li>
+            <li class="card-text">
+              Must be mentally and physically fit. Some knowledge of medical equipments are appreciated.
+            </li>
+            <li class="card-text">
+              Be at least 17 years old in most states (16 years old with parental consent in some states).
+            </li>
+            <li class="card-text">
+              Have not requested volunteer at any other place.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h4 class=" font-weight-bold font-italic text-dark">More about volunteer work</h4>
+  <p class="card-text mb-1">At OneDrop we care about your interest as volunteer. So we have different roles you can work on. You can read about different role below. </p>
+  <accordion closeOthers="true" isAnimated="true" class="shadow-lg rounded" >
+    <div *ngFor="let d of volunteerrole">
+      <accordion-group [isOpen]="d.isopen">
+        <p accordion-heading class="font-weight-bold mb-0" ><fa-icon [icon]="d.icon" class="mr-2"></fa-icon>{{d.head}}</p>
+        <h6 class="text-white-50">You will receive {{d.points}} points for this role.</h6>
+        <h6 class="text-dark mb-0 font-italic font-weight-bold">Description</h6>
+        <p class="mb-0 ml-3 " style="font-size: 16px;">{{d.info}}</p>
+        <h6 class="font-weight-bold mb-0 text-dark font-italic">Requirement</h6>
+        <p class="mb-0 ml-3 " style="font-size: 16px;">{{d.require}}</p>
+      </accordion-group>
+    </div>
+  </accordion>
+  <h4 class=" mt-2 font-weight-bold font-italic text-dark">Perks for volunteer</h4>
+  <ul>
+    <li>Appreciation certificate.</li>
+    <li>Best volunteer from each camp to get Amazon gift card.</li>
+    <li>Free medical checkup at any OneDrop registered hospital.</li>
+  </ul>
+  <p class="font-weight-bold mb-0">Timing for all the camps are from 9:00 AM to 5:00 PM</p>
+  <table class="table table-hover shadow-lg ">
+    <thead class="bg-danger text-white">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Address</th>
+      <th scope="col">State</th>
+      <th scope="col">City</th>
+      <th scope="col">Date</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody class="bg-light" *ngFor="let d of campsdata">
+    <tr>
+      <th scope="row">{{d.id}}</th>
+      <td>{{d.address}}</td>
+      <td>{{d.state}}</td>
+      <td>{{d.city}}</td>
+      <td>{{d.date | date}}</td>
+      <td class="font-weight-bold text-uppercase"><button (click)="openModal(template,d)" class="btn btn-outline-primary">Register</button></td>
+    </tr>
+    </tbody>
+  </table>
+  <p><fa-icon [icon]="caution" class="mr-2"></fa-icon>NOTICE: Hypothetical data</p>
+</div>
+
+
+<ng-template #template>
+  <div class="modal-header bg-light ">
+    <h4 class="modal-title pull-left text-primary">SELECT A ROLE<fa-icon class="ml-2" [icon]="registering"></fa-icon></h4>
+    <button type="button" class="close pull-right text-primary font-weight-bold" aria-label="Close" (click)="closemodalandreset()" >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="registerFormforCamp" (ngSubmit)="register()">
+      <div>
+        <div class="form-group">
+          <label>Role<span class="text-danger pl-1">*</span></label>
+          <select class="custom-select" formControlName="role" (change)="changeandvalidate()" [ngClass]="{ 'is-invalid text-danger': submitted && f.role.errors }">
+            <option value="" selected>Select a role</option>
+            <option value="donor">Donor</option>
+            <option value="volunteer">Volunteer</option>
+          </select>
+          <div *ngIf="submitted && f.role.errors" class="invalid-feedback">
+            <div *ngIf="f.role.errors.required">Role field is required.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Volunteer Role<span class="text-danger pl-1">*</span></label>
+          <select class="custom-select" formControlName="volunteerrole" [ngClass]="{ 'is-invalid text-danger': submitted && f.volunteerrole.errors }">
+            <option value="" selected>Select a Volunteer role</option>
+            <option *ngFor="let r of volunteerrole" value="{{r.head}}">{{r.head}}</option>
+          </select>
+          <div *ngIf="submitted && f.volunteerrole.errors" class="invalid-feedback">
+            <div *ngIf="f.volunteerrole.errors.required">Volunteer need to select a role.</div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary font-weight-bold px-4">Submit</button>
+      </div>
+    </form>
+  </div>
+</ng-template>

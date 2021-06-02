@@ -1,0 +1,9 @@
+.img{
+  height: 380px;
+  background-image: linear-gradient(to left, rgba(178,178,66, 0.2), rgba(178,178,66, 0.2)),url('/assets/assets/AVR_1.jpg');
+  background-size: cover;
+}
+table td{
+  padding: .35rem;
+  background: linear-gradient(to left, rgba(178,178,66, 0.2), rgba(178,178,66, 0.2));
+}

@@ -1,0 +1,70 @@
+<div class="bg-primary p-2">
+  <div class="container">
+    <div class="row" style="margin-bottom: 0.5rem;">
+      <div class="col-lg-8">
+        <p class="mb-0 text-danger font-weight-bold text-uppercase" style="font-size: 15px;">About</p>
+        <p class="text-white-50" id="about" style="font-size: 0.95rem;margin-bottom: 0.2rem;">Onedrop is a name given to a blood bank management system, which is a full-stack web application, where user can search blood anonymously, however for requesting blood or for registering into a camp a user need to be authenticated.
+          The main idea is to connect all the blood banks and needy people on a single platform to help each other by save lives and time.</p>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <p class="mb-0 text-danger font-weight-bold text-uppercase" style="font-size: 15px;" >Services offered</p>
+        <ul style="margin-bottom: 0;">
+          <li *ngIf="!IsAuthenticated" class="text-white" >
+            <a class="text-white-50" style="font-size: 13px; text-decoration: none;" (click)="showsigninmodal()" >Sign In</a>
+          </li>
+          <li *ngIf="!IsAuthenticated" class="text-white" >
+            <a class="text-decoration-none text-white-50" style="font-size: 13px;text-decoration: none;" (click)="showregistermodal()" >Register</a>
+          </li>
+          <li *ngIf="IsAuthenticated" class="text-white" >
+            <a class="text-decoration-none text-white-50" style="font-size: 13px;text-decoration: none;" routerLink="/home/dashboard" routerLinkActive="my-nav-bg active" >Profile</a>
+          </li>
+          <li *ngIf="IsAuthenticated" class="text-white" >
+            <a class="text-decoration-none text-white-50" style="font-size: 13px;text-decoration: none;" routerLink="/home/dashboard" routerLinkActive="my-nav-bg active" >Record</a>
+          </li>
+          <li class="text-white">
+            <a class="text-decoration-none text-white-50" routerLink="/home" style="font-size: 13px;text-decoration: none;" >Search blood</a>
+          </li>
+          <li class="text-white">
+            <a class="text-decoration-none text-white-50" routerLink="/home" style="font-size: 13px;text-decoration: none;" >How it works</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <p class=" mb-0 text-danger font-weight-bold text-uppercase" style="font-size: 15px;" >Quick Links</p>
+        <ul style="margin-bottom: 0;">
+          <li class="text-white" >
+            <a class="text-white-50" style="font-size: 13px; text-decoration: none;" routerLink="/home" routerLinkActive="my-nav-bg active" [routerLinkActiveOptions]="{ exact: true }" >Home</a>
+          </li>
+          <li class="text-white" >
+            <a class="text-decoration-none text-white-50" style="font-size: 13px;text-decoration: none;"  routerLink="/home/camps" routerLinkActive="my-nav-bg active" >Camps</a>
+          </li>
+          <li class="text-white" >
+            <a  class="text-decoration-none text-white-50" style="font-size: 13px;text-decoration: none;" routerLink="/home/awareness" routerLinkActive="my-nav-bg active" >Awareness</a>
+          </li>
+          <li class="text-white" >
+            <a  class="text-decoration-none text-white-50" style="font-size: 13px;text-decoration: none;" routerLink="/home/about" routerLinkActive="my-nav-bg active" >About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr class="border-danger" style="border-width: 3px; border-radius: 16px;">
+    <div class="text-center m-2">
+      <p class="mb-1 font-weight-bold text-white-50">Follow me on:</p>
+      <a target="_blank" href="https://github.com/aps08" class="mx-2">
+        <img src="assets/github.png" height="40" width="40" alt="github">
+      </a>
+      <a target="_blank" href="https://twitter.com/aps08__" class="mx-2">
+        <img src="assets/twitter-circle.png" height="40" width="40" alt="twitter">
+      </a>
+      <a target="_blank" href="https://www.linkedin.com/in/aps08/" class="mx-2">
+        <img src="assets/linkedin.png" height="40" width="40" alt="linkedIn">
+      </a>
+      <a target="_blank"  href="https://medium.com/@aps08" class="mx-2">
+        <img class="bg-light rounded-circle"  src="assets/medium.png" height="40" width="40" alt="medium">
+      </a>
+      <a target="_blank"  href="https://www.instagram.com/aps08__" class="mx-2">
+        <img class="bg-light rounded-circle"  src="assets/instagram.png" height="40" width="40" alt="instagram">
+      </a>
+    </div>
+  </div>
+</div>

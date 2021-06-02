@@ -1,0 +1,53 @@
+<div class="container py-lg-4 py-md-2 py-sm-2">
+  <div class="row shadow-lg bg-light p-4" style="border: 2px solid grey; border-radius: 4px;">
+    <div class="col-lg-6 col-md-6 text-center">
+      <div>
+        <img [src]="imgsrc" width="150" height="150" alt="image">
+      </div>
+      <table class="table mt-1 text-uppercase text-dark" style="font-size: 1rem;">
+        <tr>
+          <td class="text-danger font-weight-bold"><fa-icon class="mx-1" style="font-size: 1.1rem;" [icon]="name"></fa-icon>
+            {{userdata.firstname}} {{userdata.lastname}}</td>
+        </tr>
+        <tr>
+          <td class="text-danger font-weight-bold"><fa-icon class="mx-1" style="font-size: 1.1rem;" [icon]="map"></fa-icon>
+            {{userdata.city}}, {{userdata.state}}</td>
+        </tr>
+        <tr>
+          <td class="text-danger font-weight-bold"><fa-icon class="mx-1" style="font-size: 1.1rem;" [icon]="bloodgroup"></fa-icon>Bloodgroup: {{getbloodgroup(userdata.bloodgroup)}}</td>
+        </tr>
+        <tr>
+          <td class="text-danger font-weight-bold"><fa-icon class="mx-1" style="font-size: 1.1rem;" [icon]="email"></fa-icon>Email: {{userdata.email}}</td>
+        </tr>
+        <tr>
+          <td class="text-danger font-weight-bold"><fa-icon class="mx-1" style="font-size: 1.1rem;" [icon]="phone"></fa-icon>Phone: {{userdata.phone}}</td>
+        </tr>
+        <tr>
+          <td class="text-danger font-weight-bold"><fa-icon class="mx-1 text-danger font-weight-bold" style="font-size: 1.1rem;" [icon]="birth"></fa-icon>Date of birth: {{userdata.dob| date}}</td>
+        </tr>
+        <tr>
+          <td><button (click)="addadmin()" class="btn btn-outline-primary btn-block" style="font-size: 0.8rem;"><fa-icon class="mx-2 font-weight-bold" [icon]="edit"></fa-icon>ADD A NEW ADMIN</button></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-lg-6 col-md-6 text-center text-capitalize">
+      <div class="bg-secondary m-4 p-2 py-4" style="border-radius: 16px;">
+        <p class="text-white-50 text-left ml-2 mb-1">Why i didn't add more functionality in admin part ?</p>
+        <ul class="text-white-50 text-left">
+          <li>Still learning.</li>
+          <li>Running out of time.</li>
+          <li>Not getting any idea.</li>
+        </ul>
+        <p class="text-white-50 text-left ml-2 mb-1">Some functionality that could be added easily in admin part are:</p>
+        <ul class="text-white-50 text-left">
+          <li>Updating bank records.</li>
+          <li>Showing  blood request made.</li>
+          <li>All the request that has been made for camps ( Volunteer / Donor).</li>
+        </ul>
+        <p class="text-white mb-0"> If you like my work, feel free to connect with me on my social media handles.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+

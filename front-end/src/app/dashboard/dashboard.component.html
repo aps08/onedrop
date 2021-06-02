@@ -1,0 +1,89 @@
+<div class="container py-lg-4 py-md-2 py-sm-2">
+  <div class="row shadow-lg bg-light p-4" style="border: 2px solid grey; border-radius: 4px;">
+    <div class="col-lg-4 col-md-6 text-center">
+        <div>
+          <img [src]="imgsrc" width="150" height="150" alt="image">
+        </div>
+      <table class="table mt-1 text-uppercase text-dark" style="font-size: 1rem;">
+        <tr>
+          <td class="text-danger font-weight-bold"><fa-icon class="mx-1" style="font-size: 1.1rem;" [icon]="name"></fa-icon>
+            {{userdata.firstname}} {{userdata.lastname}}</td>
+        </tr>
+        <tr>
+          <td class="text-danger font-weight-bold"><fa-icon class="mx-1" style="font-size: 1.1rem;" [icon]="map"></fa-icon>
+            {{userdata.city}}, {{userdata.state}}</td>
+        </tr>
+        <tr>
+          <td class="text-danger font-weight-bold"><fa-icon class="mx-1" style="font-size: 1.1rem;" [icon]="bloodgroup"></fa-icon>Bloodgroup: {{getbloodgroup(userdata.bloodgroup)}}</td>
+        </tr>
+        <tr>
+          <td class="text-danger font-weight-bold"><fa-icon class="mx-1" style="font-size: 1.1rem;" [icon]="phone"></fa-icon>Phone: {{userdata.phone}}</td>
+        </tr>
+        <tr>
+          <td class="text-danger font-weight-bold"><fa-icon class="mx-1" style="font-size: 1.1rem;" [icon]="age"></fa-icon>AGE: {{ageuser}}</td>
+        </tr>
+        <tr>
+          <td class="text-danger font-weight-bold"><fa-icon class="mx-1 text-danger font-weight-bold" style="font-size: 1.1rem;" [icon]="birth"></fa-icon>Date of birth: {{userdata.dob| date}}</td>
+        </tr>
+        <tr>
+          <td><button class="btn btn-outline-primary btn-block" (click)="editdetails()" style="font-size: 0.8rem;"><fa-icon class="mx-2 font-weight-bold" [icon]="edit"></fa-icon>EDIT DETAILS</button></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-lg-4 col-md-6">
+      <div>
+        <div class="card bg-primary text-white text-center mx-2 mt-2 p-2">
+          <p class="card-text ">{{userdata.email}}</p>
+        </div>
+      </div>
+      <div>
+        <div class="card bg-primary text-white text-center mx-2 mt-2 p-2">
+          <p class="card-text ">POINTS: {{userdata.points}}</p>
+        </div>
+        <small class="form-text text-muted ml-2">Number of points earned.</small>
+      </div>
+      <div>
+        <div class="card bg-danger text-white text-center mx-2 mt-2 p-2">
+          <p class="card-text ">REQUESTS: {{userdata.request}}</p>
+        </div>
+        <small class="form-text text-muted ml-2">Number of requests made.</small>
+        <small class="form-text text-muted ml-2">Point +2 on each request.</small>
+      </div>
+      <div>
+        <div class="card bg-primary text-white text-center mx-2 mt-2 p-2">
+          <p class="card-text ">DONATED: {{userdata.donated}}</p>
+        </div>
+        <small class="form-text text-muted ml-2">Number of times donated blood.</small>
+        <small class="form-text text-muted ml-2">Point +5 on each blood donation.</small>
+      </div>
+      <div>
+        <div class="card bg-danger text-white text-center mx-2 mt-2 p-2">
+          <p class="card-text ">VOLUNTEERED: {{userdata.volunteered}}</p>
+        </div>
+        <small class="form-text text-muted ml-2">Number of times volunteered.</small>
+        <small class="form-text text-muted ml-2">Point based on volunteered role. (5-15 points)</small>
+      </div>
+      <div>
+        <div class="card bg-primary text-white text-center mx-2 mt-2 p-2">
+          <p class="card-text ">GIFTS: {{userdata.gifts}}</p>
+        </div>
+        <small class="form-text text-muted ml-2">Number of gifts received.</small>
+        <small class="form-text text-muted ml-2">Gifts for each 80 points.</small>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-12 align-items-center">
+      <div>
+        <small class="form-text text-muted m-2" style="font-size: 1rem;">History</small>
+        <div class="bg-secondary p-2 text-white-50 my-2" style="overflow-x: hidden; overflow-y: auto;height: 415px; border-radius: 4px; border: 2px solid dimgray;">
+          <p style="font-size: 0.8rem; border-radius: 4px; " class="p-2 bg-light text-dark" *ngFor="let d of history" >
+          {{d}}
+          </p>
+        </div>
+      </div>
+      <div>
+        <button  (click)="changepassword()" class="btn btn-outline-danger m-2">Change password</button>
+        <button (click)="deleteaccount()" class="btn btn-outline-primary m-2">Delete account</button>
+      </div>
+    </div>
+  </div>
+</div>

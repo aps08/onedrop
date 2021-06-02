@@ -1,0 +1,185 @@
+<!--CAROUSEL-->
+<carousel [isAnimated]="true" [showIndicators]="false">
+  <slide >
+    <img [src]="images[0]" alt="img" style="display: block; width: 100%;">
+    <div class="carousel-caption d-md-block pt-1 pb-1" style="bottom: 5px;">
+      <blockquote class="blockquote mb-0 text-center" >
+        <p class="mb-0 quote ">“We make a living by what we get. We make a life by what we give.”</p>
+        <footer class="blockquote-footer text-center text-white quoter mb-0"> <cite title="Source Title">Winston Churchill</cite></footer>
+      </blockquote>
+      <p class="quotedes">Blood plasma can be separated using centrifuge device which spins blood at a very high speed. The cells then get collected at the bottom of the tube, separating blood plasma from the cells.</p>
+    </div>
+  </slide>
+  <slide>
+    <img [src]="images[1]" alt="img" style="display: block; width: 100%;">
+    <div class="carousel-caption d-md-block pt-1 pb-1" style="bottom: 5px;">
+      <blockquote class="blockquote mb-0 text-center">
+        <p class="mb-0 quote">“No one has ever become poor by giving.”</p>
+        <footer class="blockquote-footer text-center text-white quoter mb-0"> <cite title="Source Title"> Anne Frank</cite></footer>
+      </blockquote>
+      <p class="quotedes">Red blood cells consist of hemoglobin. Hemoglobin is actually a protein that contains iron. Oxygen combines with this iron and gives the characteristic red color to our blood as well as hemoglobin.</p>
+    </div>
+  </slide>
+  <slide>
+    <img [src]="images[2]" alt="img" style="display: block; width: 100%;">
+    <div class="carousel-caption d-md-block pt-1 pb-1" style="bottom: 5px;">
+      <blockquote class="blockquote mb-0 text-center">
+        <p class="mb-0 quote ">“We cannot live only for ourselves. A thousand fibers connect us with our fellow men.” </p>
+        <footer class="blockquote-footer text-center text-white quoter mb-0 "> <cite title="Source Title">Herman Melville</cite></footer>
+      </blockquote>
+      <p class="quotedes">While blood clotting is meant for good, it can become dangerous. If blood clots in blood vessels of heart, one can experience heart attack. Similarly, blood clot in brain can lead to stroke.</p>
+    </div>
+  </slide>
+</carousel>
+<!--FEATURED AND SEARCH FORM-->
+<div class="bg-dark">
+  <div class="container-fluid">
+    <div class="row p-2">
+      <div class="col-md-4 col-sm-6 col-lg-2 " *ngFor="let f of featured">
+        <div class="card {{f.bg}} text-center text-white" triggers="mouseenter:mouseleave"  popover="{{f.popover[0]}} {{f.value}} {{f.popover[1]}}" delay="200">
+          <fa-icon class="iconssize" [icon]="f.iconv"></fa-icon>
+          <p>{{f.value}}<br> {{f.key}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="search"  class="container">
+    <form [formGroup]="formsearch" (ngSubmit)="searchblood()">
+      <div>
+        <div class="form-row">
+          <div class="form-group col-lg-3 col-md-6" >
+            <label class="text-white" ><fa-icon [icon]="state" class="mr-1"></fa-icon>State</label>
+            <select  class="form-control" formControlName="state" (change)="onChange($event)" [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
+              <option selected disabled value="">Select State</option>
+              <option *ngFor="let d of statelist" value="{{d.state}}">{{d.state}}</option>
+            </select>
+            <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+              <div *ngIf="f.state.errors.required">Field is required.</div>
+            </div>
+          </div>
+          <div class="form-group col-lg-3 col-md-6">
+            <label class="text-white"><fa-icon [icon]="city" class="mr-1"></fa-icon>City</label>
+            <select  class="form-control" formControlName="city" [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
+              <option selected disabled value="">Select City</option>
+              <option *ngFor="let n of citylist" value="{{n}}">{{n}}</option>
+            </select>
+            <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+              <div *ngIf="f.city.errors.required">Field is required.</div>
+            </div>
+          </div>
+          <div class="form-group col-lg-3 col-md-6">
+            <label class="text-white"><fa-icon [icon]="collected" class="mr-1"></fa-icon>Blood group</label>
+            <select  class="form-control" formControlName="bloodgroup" [ngClass]="{ 'is-invalid': submitted && f.bloodgroup.errors }">
+              <option selected disabled value="">Select blood group</option>
+              <option *ngFor="let d of bloodgroup" value="{{d.value}}">{{d.group}}</option>
+            </select>
+            <div *ngIf="submitted && f.bloodgroup.errors" class="invalid-feedback">
+              <div *ngIf="f.bloodgroup.errors.required">Field is required.</div>
+            </div>
+          </div>
+          <div class="form-group col-lg-3 col-md-6 justify-content-center ">
+            <label class="text-white"><fa-icon [icon]="search" class="mr-1"></fa-icon>Search</label>
+            <input  class="form-control bg-danger text-white" type="submit" value="Submit">
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!--Process-->
+<div class="container">
+  <!--  RESULT DIV-->
+  <div *ngIf="searchresult!=null">
+    <table class="table shadow-lg">
+      <thead class="bg-danger text-white">
+      <tr>
+        <th scope="col">Bank</th>
+        <th scope="col">Bloodgroup</th>
+        <th scope="col">Units</th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody class="bg-light">
+      <tr *ngIf="searchresult">
+        <td class="font-weight-bold" style="font-size: 1.2rem">{{searchresult.bank}}</td>
+        <td class="font-weight-bold" style="font-size: 1.2rem">{{getbloodgroup(searchresult.bloodgroup)}}</td>
+        <td class="font-weight-bold" style="font-size: 1.2rem">{{searchresult.units}}</td>
+        <td><button class="btn btn-outline-primary btn-block" (click)="sendrequest(searchresult)">SEND REQUEST FOR COLLECTING BLOOD</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <!--  RESULT DIV ABOVE-->
+  <h4 id="works" class=" my-2 font-weight-bold font-italic">How it works</h4>
+  <accordion closeOthers="true" isAnimated="true" class="shadow-lg rounded">
+    <accordion-group isOpen="true">
+      <p accordion-heading class=" font-weight-bold mb-0" ><fa-icon [icon]="register" class="iconssize mr-2"></fa-icon>Register yourself on our site</p>
+      <div class="px-3">
+        <p class="mb-0">Your registeration help us keep track of the blood donated by you. It also helps us remind you about your registered and upcoming
+          camps. By registering yourself on our site you will receive all types of notification. Our site aims to provide blood to the needy and to organise
+          blood donation camps in a smooth and easy way.</p>
+        <ul class="m-1">
+          <li>If you have not registered yet.<a class="text-primary font-weight-bold" (click)="showregistermodal()"> Register here</a></li>
+          <li>If you have already registered. <a class="text-primary font-weight-bold" (click)="showsinginmodal()"> Sign In here</a></li>
+        </ul>
+      </div>
+    </accordion-group>
+    <accordion-group *ngFor="let c of accordion" >
+      <p accordion-heading class=" font-weight-bold mb-0" ><fa-icon [icon]="c.icon" class="iconssize mr-2"></fa-icon>{{c.head}}</p>
+      <div class="px-3">
+        <p class="mb-0">{{c.info}}</p>
+      </div>
+    </accordion-group>
+  </accordion>
+
+  <h4 class="my-2 font-weight-bold font-italic">Camps of last week</h4>
+  <div id="camps">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-6" *ngFor="let c of campsdata">
+        <div class="card text-danger font-weight-bold {{c.border}}" >
+          <img class="card-img-top" src="{{c.img}}" alt="image">
+          <div class="card-body">
+            <h5 class="card-title font-weight-bold ml-1 mb-1 text-uppercase font-italic">{{c.city}}</h5>
+            <p class="card-text mb-0">Participants: {{c.participants}}</p>
+            <p class="card-text mb-0">Collected: {{c.collected}} Units</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h4 class="my-2 font-weight-bold font-italic">Top participants</h4>
+  <div id="top">
+    <div class="row justify-content-center">
+      <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let t of topparticipants">
+        <div class="card m-1">
+          <div class="card-body {{t.bg}} text-white-50">
+            <h5 class="card-title text-white">{{t.name}}</h5>
+            <h6 class="card-subtitle mb-3 text-white" style="font-size: 1.1rem;">{{t.profession}}</h6>
+            <h6 class="card-subtitle mb-2 ">Points: {{t.points}}</h6>
+            <h6 class="card-subtitle mb-2 "><fa-icon [icon]="location" class="iconssize mr-1"></fa-icon>
+              {{t.location}}</h6>
+            <h6 class="card-subtitle mb-2 ">Age: {{t.age}}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h4 class="my-2 font-weight-bold font-italic">What people say</h4>
+</div>
+
+<div class="container-fluid px-4" id="people">
+  <carousel showIndicators itemsPerSlide="2" interval="3000" isAnimated pauseOnFocus="true" >
+    <slide *ngFor="let d of people">
+      <div class="card">
+        <div class="card-body ml-2">
+          <blockquote class="blockquote mb-0">
+            <p class="mb-0">{{d.comment}}</p>
+            <footer class="blockquote-footer text-right font-weight-bold"><cite title="Source Title">{{d.name}} ({{d.location}})</cite></footer>
+          </blockquote>
+        </div>
+      </div>
+    </slide>
+  </carousel>
+</div>
+

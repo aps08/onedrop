@@ -1,0 +1,15 @@
+
+*{
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: 'Roboto', sans-serif;
+}
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+main{
+  margin-top: 62px;
+}

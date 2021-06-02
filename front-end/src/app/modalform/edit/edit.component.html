@@ -1,0 +1,54 @@
+<div>
+  <div class="modal-header bg-light">
+    <h4 class="modal-title text-primary text-uppercase font-weight-bolder align-content-center">CHANGE INFORMATION</h4>
+    <fa-icon class="text-primary mx-2" style="font-size: 1.5rem;" [icon]="edit"></fa-icon>
+    <button type="button" class="close text-primary" aria-label="Close" (click)="close()">
+      <span aria-hidden="true">&#215;</span>
+    </button>
+  </div>
+  <div class="modal-body bg-white">
+    <form [formGroup]="form" (ngSubmit)="confirm()">
+      <div>
+        <small class="form-text text-muted">Important information like Blood group, Email, Date of birth cannot be changed directly from here.</small>
+      </div>
+      <div>
+        <div class="form-group">
+          <label >State<span class="text-danger pl-1">*</span></label>
+          <select formControlName="state" (change)="onChange($event)"  class="custom-select" [ngClass]="{ 'is-invalid': submit && f.state.errors }">
+            <option selected disabled value="">Select state</option>
+            <option *ngFor="let d of statelist" value="{{d.state}}">{{d.state}}</option>
+          </select>
+          <div *ngIf="submit && f.state.errors" class="invalid-feedback">
+            <div *ngIf="(submit) && (f.state.errors.required)">Field is required.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label >City<span class="text-danger pl-1">*</span></label>
+          <select formControlName="city" class="custom-select" [ngClass]="{ 'is-invalid': submit && f.city.errors }">
+            <option selected disabled value="">Select city</option>
+            <option *ngFor="let n of citylist" value="{{n}}">{{n}}</option>
+          </select>
+          <div *ngIf="submit && f.city.errors" class="invalid-feedback">
+            <div *ngIf="(submit) && (f.city.errors.required)">Field is required.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Phone<span class="text-danger pl-1">*</span></label>
+          <input formControlName="phone" type="number" class="form-control" placeholder="9988115588" [ngClass]="{ 'is-invalid': submit && f.phone.errors }">
+          <div *ngIf="submit && f.phone.errors" class="invalid-feedback">
+            <div *ngIf="(submit) && (f.phone.errors.required)">Field is required.</div>
+            <div *ngIf="(submit) && (f.phone.errors.pattern)">A valid 10 digit phone number is required.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label >Password<span class="text-danger pl-1">*</span></label>
+          <input formControlName="password" type="password" class="form-control" placeholder="yourpassword" [ngClass]="{ 'is-invalid': submit && f.password.errors }" autocomplete="true">
+          <div *ngIf="submit && f.password.errors" class="invalid-feedback">
+            <div *ngIf="(submit) && (f.password.errors.required)">Field is required.</div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary font-weight-bold px-4">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

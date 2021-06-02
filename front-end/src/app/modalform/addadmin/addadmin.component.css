@@ -1,0 +1,7 @@
+.modal-body{
+  height: 80vh;
+  overflow-y: auto;
+}
+select, input{
+  border-width: 2px;
+}

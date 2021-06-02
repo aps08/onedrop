@@ -1,0 +1,62 @@
+<!--RESPONSIVE HEADER-->
+<header class="fixed-top shadow bg-white rounded">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid" >
+      <a class="navbar-brand text-danger font-weight-bold" style="font-size: 2.5rem;" href="/"><fa-icon class="mr-2" style="font-size: 2.5rem;" [icon]="logo"></fa-icon>OneDrop</a>
+      <button class="navbar-toggler text-danger" type="button" style="border-color: #dc3545;" (click)="isMenuCollapsed = !isMenuCollapsed">
+        &#9776;
+      </button>
+      <div [collapse]="isMenuCollapsed" [isAnimated]="true" class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto text-center my-1">
+          <li class="nav-item mx-1">
+            <a class="nav-link" routerLink="/home" (click)="isMenuCollapsed = true;"  routerLinkActive="my-nav-bg active" [routerLinkActiveOptions]="{ exact: true }" ><fa-icon class="mx-1" [icon]="home"></fa-icon>Home</a>
+          </li>
+          <li class="nav-item mx-1" *ngFor="let d of navbardata" >
+            <a class="nav-link "  routerLink="{{d.href}}" (click)="isMenuCollapsed = true;" routerLinkActive="my-nav-bg active" ><fa-icon class="mx-1" [icon]="d.icon"></fa-icon>
+              {{d.text}}</a>
+          </li>
+          <li *ngIf="!isAuthenticated" class="nav-item mx-1">
+            <div class="btn-group" dropdown [isAnimated]="true" >
+              <button dropdownToggle type="button" placement="left" class="btn btn-danger dropdown-toggle"
+                      aria-controls="dropdown-menu-dividers"><fa-icon [icon]="user" class="mx-1"></fa-icon>
+                SIGN IN / REGISTER <span class="caret"></span>
+              </button>
+              <ul *dropdownMenu class="dropdown-menu right border-secondary bg-light"
+                  role="menu" aria-labelledby="button-menu-dividers">
+                <li role="menuitem" (click)="isMenuCollapsed = true;"><a class="dropdown-item text-center font-weight-bold text-danger" (click)="showsinginmodal()"><fa-icon [icon]="sign" class="mx-1"></fa-icon>SIGN IN</a></li>
+                <li role="menuitem" (click)="isMenuCollapsed = true;"><a class="dropdown-item text-center font-weight-bold text-danger" (click)="showregistermodal()"><fa-icon [icon]="register" class="mx-1"></fa-icon>REGISTER</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li *ngIf="isAuthenticated" class="nav-item mr-4">
+            <div class="btn-group" dropdown [isAnimated]="true">
+              <button dropdownToggle type="button" placement="left" class="btn btn-danger dropdown-toggle"
+                      aria-controls="dropdown-menu-dividers"><fa-icon [icon]="user" class="mx-1"></fa-icon>
+                {{username}}
+                <span class="caret"></span>
+              </button>
+              <ul *dropdownMenu class="dropdown-menu left border-secondary bg-light"
+                  role="menu" aria-labelledby="button-menu-dividers">
+                <li role="menuitem" (click)="isMenuCollapsed = true;"><a class="dropdown-item text-center font-weight-bold text-danger" [routerLink]="link"><fa-icon [icon]="dashboard" class="mx-1"></fa-icon>DASHBOARD</a></li>
+                <li role="menuitem" (click)="isMenuCollapsed = true;"><a class="dropdown-item text-center font-weight-bold text-danger" (click)="signout()"><fa-icon [icon]="logout" class="mx-1"></fa-icon>LOGOUT</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- SCROLL PROGRESS INDICATOR-->
+  <div class="progress bg-primary" style="height: 3px;">
+    <div class="progress-bar bg-danger" id="scrollBar" role="progressbar" style="width: 0" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <!--  SCROLL PROGRESS INDICATOR COMPLETED-->
+</header>
+<!--HEADER COMPLETED-->
+
+
+
+
+

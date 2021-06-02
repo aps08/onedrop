@@ -1,0 +1,120 @@
+.container-fluid .card{
+  border-radius: 16px 0 16px 0;
+  margin: 10px;
+}
+.container-fluid .card .iconssize{
+  font-size: 2.3rem;
+}
+#camps .card{
+  border-radius: 8px;
+  border-width: 3px;
+  margin: 5px;
+  background-image: linear-gradient(rgba(180,180,180,0.7), rgba(180,180,180,0.7)), url("https://i.picsum.photos/id/1073/5472/3648.jpg?hmac=xCDetU9pLnLGZopbvHOQOkQRhTiYwyrzWc0YyHPzp5Y");
+  background-size: cover;
+}#camps .card img{
+   height: 150px;
+   border-radius: 4px;
+ }
+#camps .card:hover, #top .card:hover{
+  box-shadow: 4px 4px 4px 4px lightgray;
+}
+#camps .card .card-body{
+  padding: 0.5rem;
+}
+#camps .card .card-body .card-text{
+  font-size: 1rem;
+}
+#people carousel slide .card{
+  box-shadow: 3px 2px 3px darkgrey;
+  margin: 10px;
+  border-radius: 8px;
+  background: -webkit-radial-gradient(center, #C9DCF3, #F7D6D0);
+  background: -moz-radial-gradient(center, #C9DCF3, #F7D6D0);
+  background: radial-gradient(ellipse at center, #C9DCF3, #F7D6D0);
+}
+#people carousel slide .card p{
+  font-size: 1.2rem;
+}
+select{
+  border-width: 3px;
+}
+#people carousel::ng-deep .carousel-control-prev, #people carousel::ng-deep .carousel-control-next{
+  width: 5%;
+}
+#people carousel::ng-deep .carousel-control-prev-icon{
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='000000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+#people carousel::ng-deep .carousel-control-next-icon{
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='000000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+form label{
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+.card p {
+  padding: 0 5px;
+  font-size: 1.3rem;
+}
+.quote{
+  font-size: 1.4rem;
+}
+.quoter,.quotedes{
+  font-size: 19px;
+}
+:host >>> .popover {
+  background-color:rgb(220,220,220);
+  font-weight: bolder;
+}
+:host >>> .popover>.arrow:after {
+  border-top-color: rgb(220,220,220);
+}
+accordion-group::ng-deep .panel-heading{
+  color:#007bff;
+  font-size: 1.2rem;
+  background-color: rgb(202,202,202);
+}
+accordion-group::ng-deep .panel-heading:hover{
+  background-color: rgb(180,180,180);
+}
+accordion-group::ng-deep .panel .panel-body {
+  background-color: #dc3545;
+  color: white;
+  font-size: 1rem;
+  padding: 1.2rem;
+  opacity: 0.98;
+}
+@media screen and (max-width: 1220px){
+  .quote,.quoter{
+    font-size: 1.1rem;
+  }
+  .quotedes{
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 956px){
+  .quotedes{
+    font-size: 16px;
+  }
+  .quote,.quoter{
+    display: none;
+  }
+}
+@media screen and (max-width: 680px){
+  .quotedes{
+    font-size: 14px;
+  }
+  #camps .card img{
+    height: 200px;
+  }
+  #camps .card .card-title, #camps .card .card-text{
+    text-align: center;
+  }
+}
+@media screen and (max-width: 570px){
+  #people .card p{
+    font-size: 1rem;
+  }
+  #people .card footer{
+    font-size: 0.8rem;
+  }
+}

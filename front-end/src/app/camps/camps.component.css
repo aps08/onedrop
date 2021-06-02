@@ -1,0 +1,21 @@
+.card{
+  border-width: 3px;
+}
+accordion accordion-group p{
+  font-size: 1.2rem;
+}
+accordion-group::ng-deep .panel-heading{
+  color:#dc3545;
+  font-size: 1.2rem;
+  background-color: rgb(202,202,202);
+}
+accordion-group::ng-deep .panel-heading:hover{
+  background-color: rgb(180,180,180);
+}
+accordion-group::ng-deep .panel .panel-body {
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  padding: 1.2rem;
+  opacity: 0.98;
+}
