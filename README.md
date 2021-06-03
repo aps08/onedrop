@@ -35,6 +35,7 @@ Download: ``git clone https://github.com/aps08/onedrop``
      
        ![NGX-bootsrap](https://img.shields.io/badge/NgxBoostrap-v6.0.0-red)
        ![bootsrap](https://img.shields.io/badge/Boostrap-v4.1.1-brightgreen)
+       ![toastr](https://img.shields.io/badge/NgxToastr-v13.2.1-red)
        ![Spinner](https://img.shields.io/badge/NgxSpinner-v10.0.1-blue)
        ![loader](https://img.shields.io/badge/NgxUiLoader-v10-red)
  - Back-end
@@ -47,6 +48,7 @@ Download: ``git clone https://github.com/aps08/onedrop``
 
     ![mySQL](https://img.shields.io/badge/MySQLServer-blue)
 ### Features
+
 
 ### Drawbacks
 
