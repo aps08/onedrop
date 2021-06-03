@@ -14,7 +14,7 @@
  - [Intro](#intro)
  - [Build](#build)
  - [Features](#features)
- - [Drawbacks](#drawbacks)
+ - [Future](#future)
  - [Contributors](#contributors)
 
 
@@ -48,8 +48,16 @@ Download: ``git clone https://github.com/aps08/onedrop``
 
     ![mySQL](https://img.shields.io/badge/MySQLServer-blue)
 ### Features
+ 
+ - Different dashboard for different user. ``user and admin``
+ - Jwt Interceptor in Angular
+ - Role base rounting in Angular
+ - Error handler Interceptor in Angular
+ - Jwt Implementation in Spring boot
+ - Spring Security
+ - Sending email in spring boot
 
-
-### Drawbacks
+### Future
+We have followed a monolithic approach to create the back-end, however now days [microservice architecture](https://spring.io/blog/2015/07/14/microservices-with-spring) is followed everywhere. So in future I [aps08](https://github.com/aps08) will be releasing a a modified version of the back-end using a microservice architecture, or a new project using micro-service.
 
 ### Contributors
