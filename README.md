@@ -75,8 +75,6 @@ We have followed a monolithic approach to create the back-end, however now days 
   <img src = "https://contrib.rocks/image?repo = aps08/onedrop"/>
 </a>
 
-Made with [contributors-img](https://contrib.rocks).
-
 ### Connect
 <p>
  
