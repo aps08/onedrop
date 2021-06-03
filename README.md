@@ -7,6 +7,7 @@
  <img src="https://img.shields.io/badge/test-passing-brightgreen" alt="ptest"> 
  <img src="https://img.shields.io/badge/maintained-no-red" alt="nmaintained"> 
  <img src="https://img.shields.io/badge/responsive-80-brightgreen" alt="80persentresponsive"> 
+ <img src="https://img.shields.io/badge/IDEA-intellij-red" alt="intellij"> 
 </p>
 
 ## Table of content
@@ -18,9 +19,31 @@
 
 
 ### Intro
-Onedrop is web application for blood bank management. Onedrop is web application for blood bank management.Onedrop is web application for blood bank management.Onedrop is web application for blood bank management.Onedrop is web application for blood bank management.Onedrop is web application for blood bank management.Onedrop is web application for blood bank management.Onedrop is web application for blood bank management.Onedrop is web application for blood bank management.Onedrop is web application for blood bank management.Onedrop is web application for blood bank management.
-### Build
+Onedrop is a name given to a blood bank management system, which is a full-stack web application, where user can search blood anonymously, however for requesting blood or for registering into a camp a user need to be authenticated. The main idea is to connect all the blood banks and needy people on a single platform to help each other by save lives and time.
 
+A user can register on onedrop and request blood as well as register into a camp either as a donor or volunteer. For registering into a camp as a volunteer, the user can select a role of a volunteer as per their interest. For each successful request or transaction the user will receive a email which would be the proof for the same. The main goal was to learn Spring boot and Angular. This project was made to show what we have learned.
+### Build
+ - Front-end
+ 
+    ![Angular CLI](https://img.shields.io/badge/Angular-v10.2.3-red) 
+    ![NodeJS](https://img.shields.io/badge/Nodejs-v12.11.0-green)
+    ![Typescript](https://img.shields.io/badge/Typescript-v4.1.5-blue)
+    ![NPM](https://img.shields.io/badge/NPM-v6.11.3-brightgreen)
+    - Component Library used:
+     
+       ![NGX-bootsrap](https://img.shields.io/badge/NgxBoostrap-v6.0.0-red)
+       ![bootsrap](https://img.shields.io/badge/Boostrap-v4.1.1-brightgreen)
+       ![Spinner](https://img.shields.io/badge/NgxSpinner-v10.0.1-blue)
+       ![loader](https://img.shields.io/badge/NgxUiLoader-v10-red)
+ - Back-end
+
+    ![Spring boot](https://img.shields.io/badge/SpringBoot-v2.4.6-green)
+    ![java](https://img.shields.io/badge/JAVA-v11-blue)
+    ![java](https://img.shields.io/badge/project-maven-brightgreen)
+    ![java](https://img.shields.io/badge/build-jar-blue)
+ - Database
+
+    ![mySQL](https://img.shields.io/badge/MySQLServer-blue)
 ### Features
 
 ### Drawbacks
