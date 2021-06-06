@@ -42,7 +42,6 @@ Download: ``git clone https://github.com/aps08/onedrop``
     - Component Library used:
      
        ![ngx boostrap](https://img.shields.io/badge/NGX_Boostrap%20v6-503040.svg?style=for-the-badge)
-       ![bootsrap](https://img.shields.io/badge/Boostrap%20v4.1.1-7952b3.svg?style=for-the-badge)
        ![toastr](https://img.shields.io/badge/NGX_Toastr%20v13.2.1-dc3545.svg?style=for-the-badge)
        ![Spinner](https://img.shields.io/badge/NGX_Spinner%20v10.0.1-0d6efd.svg?style=for-the-badge)
        ![loader](https://img.shields.io/badge/NGX_ui_loader%20v10-dc3545.svg?style=for-the-badge)
