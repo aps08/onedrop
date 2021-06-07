@@ -14,7 +14,6 @@
  - [Build](#build)
  - [Features](#features)
  - [Future](#future)
- - [Contributors](#contributors)
  - [Connect](#connect)
  - [Demo](https://youtu.be/JBQbs7bAO-A)
 
@@ -64,12 +63,6 @@ Download: ``git clone https://github.com/aps08/onedrop``
 
 ### Future
 We have followed a monolithic approach to create the back-end, however now days [microservice architecture](https://spring.io/blog/2015/07/14/microservices-with-spring) is followed everywhere. So in future I [aps08](https://github.com/aps08) will be releasing a a modified version of the back-end using a microservice architecture, or a new project using micro-service.
-
-### Contributors
-
-<a href="https://github.com/aps08/onedrop/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=aps08/onedrop" />
-</a>
 
 ### Connect
 <p>
