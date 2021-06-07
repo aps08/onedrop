@@ -16,6 +16,7 @@
  - [Future](#future)
  - [Contributors](#contributors)
  - [Connect](#connect)
+ - [Demo](https://youtu.be/JBQbs7bAO-A)
 
 
 ### Intro
@@ -24,9 +25,6 @@ Onedrop is a web based blood bank management system, where user can search blood
 A user can register on onedrop and request blood as well as register into a camp either as a donor or volunteer. For registering into a camp as a volunteer, the user can select a role of a volunteer as per their interest. For each successful request or transaction the user will receive a email which would be the proof for the same. The main goal was to learn Spring boot and Angular. This project was made to show what we have learned.
 
 Download: ``git clone https://github.com/aps08/onedrop`` 
-
-<!-- You can see the [demo](https://www.youtube.com/channel/UCu_vHY1svvi8mRjccSpSfbw) video here. -->
-
 
 ### Build
 
