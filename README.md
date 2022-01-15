@@ -16,7 +16,6 @@
  - [Future](#future)
  - [Contributors](#contributors)
  - [Connect](#connect)
- - [Demo](https://youtu.be/JBQbs7bAO-A)
 
 
 ### Intro
